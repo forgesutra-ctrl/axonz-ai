@@ -32,7 +32,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "axonz.ai — Voice Intelligence Platform",
   description:
-    "300ms latency. 12+ Indian · 150 globally. India's fastest voice bot platform.",
+    "300ms latency. 12+ Indian · 60 globally. India's fastest voice bot platform.",
 };
 
 export default function RootLayout({

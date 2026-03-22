@@ -776,7 +776,6 @@ body {
   /* Pricing page */
   .pricing-page-content,
   .pricing-page-calc,
-  .pricing-page-included,
   .pricing-page-faq {
     padding: 60px 24px !important;
   }
@@ -786,9 +785,6 @@ body {
   .faq-accordion [style*="padding: 0 0 20px"] + div,
   .faq-accordion > div > div > div:last-child {
     font-size: 14px !important;
-  }
-  .pricing-page-included-grid {
-    grid-template-columns: 1fr !important;
   }
   .pricing-calculator {
     padding: 24px !important;

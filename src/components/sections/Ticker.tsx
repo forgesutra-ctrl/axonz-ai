@@ -5,7 +5,7 @@ import { useApp } from "@/context/AppContext";
 const TICKER_ITEMS_IN = [
   "🇮🇳 300ms latency — 2.5× faster than market",
   "🇮🇳 Pricing from ₹4.99/min at scale",
-  "✦ 12+ Indian languages natively",
+  "✦ 12+ Indian languages · 60 globally",
   "✦ Proprietary IVR — not 3rd party infra",
   "✦ TRAI · RBI · IRDAI compliant",
   "✦ Live in 14 days from contract signing",
@@ -15,7 +15,7 @@ const TICKER_ITEMS_IN = [
 const TICKER_ITEMS_US = [
   "🇺🇸 300ms latency — 2.5× faster than market",
   "🇺🇸 Pricing from $0.08/min at scale",
-  "✦ 150+ languages globally",
+  "✦ 12+ Indian languages · 60 globally",
   "✦ Proprietary IVR — not 3rd party infra",
   "✦ TCPA · HIPAA compliance ready",
   "✦ Live in 14 days from contract signing",
@@ -49,7 +49,7 @@ export function Ticker() {
       >
         {items.map((item, i) => {
           const parts = item.split(
-            /(300ms|₹[\d.]+|\$[\d.]+|93%|100\+|14 days)/g
+            /(300ms|₹[\d.]+|\$[\d.]+|93%|12\+|60|14 days)/g
           );
           return (
             <span
@@ -64,7 +64,7 @@ export function Ticker() {
               }}
             >
               {parts.map((part, j) =>
-                /^(300ms|₹[\d.]+|\$[\d.]+|93%|100\+|14 days)$/.test(part) ? (
+                /^(300ms|₹[\d.]+|\$[\d.]+|93%|12\+|60|14 days)$/.test(part) ? (
                   <span
                     key={j}
                     style={{

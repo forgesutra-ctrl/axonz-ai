@@ -88,7 +88,7 @@ export const PRICING = {
       desc: "Scale voice automation for US inbound and outbound operations.",
       features: [
         "Up to 30,000 minutes/month",
-        "150+ languages globally",
+        "60 languages globally",
         "Advanced analytics & recordings",
         "Live agent handoff",
         "TCPA compliance ready",

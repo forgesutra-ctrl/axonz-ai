@@ -5,7 +5,7 @@ import { useApp } from "@/context/AppContext";
 const BASE_ROWS = [
   {
     name: "axonz.ai",
-    langs: "150+ (12 Indian)",
+    langs: "12+ Indian · 60 globally",
     priceIN: "₹4.99–5.99/min",
     priceUS: "$0.08–0.10/min",
     timeline: "14 days",

@@ -3,7 +3,15 @@
 import { useState, useEffect, useRef } from "react";
 import { useApp } from "@/context/AppContext";
 
-const LANGUAGES = ["Hinglish", "Hindi", "Tamil", "Telugu", "Kannada", "English"];
+const LANGUAGES = [
+  "Hinglish",
+  "Hindi",
+  "Tamil",
+  "English",
+  "Spanish",
+  "Mandarin",
+  "Vietnamese",
+];
 
 const TYPEWRITER_PHRASES = [
   "Handle 10,000 calls simultaneously.",
@@ -15,7 +23,7 @@ const TYPEWRITER_PHRASES = [
 
 const VERB_PILLS = [
   { dot: "#D04A20", text: "Answer — every call, zero hold music" },
-  { dot: "#2D6B4F", text: "Converse — in 12+ Indian, 150 globally" },
+  { dot: "#2D6B4F", text: "Converse — in 12+ Indian languages, 60 globally" },
   { dot: "#2DD4BF", text: "Convert — leads, payments, tickets" },
 ];
 
@@ -30,7 +38,7 @@ const CONVERSATIONS: Record<
 > = {
   Hinglish: {
     lang: "Hinglish",
-    lat: "720ms",
+    lat: "312ms",
     sent: "😊 Positive",
     lines: [
       { who: "agent", txt: "Namaste! Main acme finance se bol raha hoon." },
@@ -40,42 +48,9 @@ const CONVERSATIONS: Record<
       { who: "agent", txt: "Nahi, sab complete. Have a great day!" },
     ],
   },
-  Tamil: {
-    lang: "Tamil",
-    lat: "650ms",
-    sent: "😊 Positive",
-    lines: [
-      { who: "agent", txt: "Vanakkam! Appointment confirm pannanum?" },
-      { who: "caller", txt: "Aam, December 4th 3pm vennum." },
-      { who: "agent", txt: "Confirm. SMS varum ungalukku." },
-      { who: "caller", txt: "Nandri!" },
-    ],
-  },
-  Telugu: {
-    lang: "Telugu",
-    lat: "710ms",
-    sent: "😊 Positive",
-    lines: [
-      { who: "agent", txt: "Namaskaram! Meeru Suresh garu?" },
-      { who: "caller", txt: "Avunu nene matladutunna." },
-      { who: "agent", txt: "Appointment December 5th confirm chesamu." },
-      { who: "caller", txt: "Chala thanks!" },
-    ],
-  },
-  Kannada: {
-    lang: "Kannada",
-    lat: "680ms",
-    sent: "😊 Positive",
-    lines: [
-      { who: "agent", txt: "Namaskara! Order ORD-4421 bagge." },
-      { who: "caller", txt: "Heli, shipmant eega elli ide?" },
-      { who: "agent", txt: "3 ganteya olagagi deliver agutte." },
-      { who: "caller", txt: "Dhanyavaadagalu!" },
-    ],
-  },
   Hindi: {
     lang: "Hindi",
-    lat: "695ms",
+    lat: "308ms",
     sent: "😊 Positive",
     lines: [
       { who: "agent", txt: "Namaste! EMI reminder ke liye call kar raha hoon." },
@@ -84,9 +59,20 @@ const CONVERSATIONS: Record<
       { who: "caller", txt: "Theek hai, shukriya." },
     ],
   },
+  Tamil: {
+    lang: "Tamil",
+    lat: "325ms",
+    sent: "😊 Positive",
+    lines: [
+      { who: "agent", txt: "Vanakkam! Appointment confirm pannanum?" },
+      { who: "caller", txt: "Aam, December 4th 3pm vennum." },
+      { who: "agent", txt: "Confirm. SMS varum ungalukku." },
+      { who: "caller", txt: "Nandri!" },
+    ],
+  },
   English: {
     lang: "English",
-    lat: "580ms",
+    lat: "305ms",
     sent: "😐 Neutral",
     lines: [
       { who: "agent", txt: "Hi! Order ORD-8821 out for delivery today." },
@@ -95,13 +81,49 @@ const CONVERSATIONS: Record<
       { who: "caller", txt: "Perfect, thanks!" },
     ],
   },
+  Spanish: {
+    lang: "Spanish",
+    lat: "320ms",
+    sent: "😊 Positive",
+    lines: [
+      { who: "agent", txt: "¡Hola! Soy el asistente de axonz. ¿Está hablando con María García?" },
+      { who: "caller", txt: "Sí, soy yo." },
+      { who: "agent", txt: "Su cita con el Dr. Ramírez está confirmada para el lunes a las 10am." },
+      { who: "caller", txt: "Perfecto, muchas gracias." },
+      { who: "agent", txt: "¡Con gusto! Que tenga un buen día." },
+    ],
+  },
+  Mandarin: {
+    lang: "Mandarin",
+    lat: "335ms",
+    sent: "😊 Positive",
+    lines: [
+      { who: "agent", txt: "您好！我是axonz智能助手。请问是李先生吗？" },
+      { who: "caller", txt: "是的，我是。" },
+      { who: "agent", txt: "您的订单已经发货，预计明天下午送达。" },
+      { who: "caller", txt: "好的，谢谢。" },
+      { who: "agent", txt: "不客气！如需帮助请随时联系我们。" },
+    ],
+  },
+  Vietnamese: {
+    lang: "Vietnamese",
+    lat: "345ms",
+    sent: "😊 Positive",
+    lines: [
+      { who: "agent", txt: "Xin chào! Tôi là trợ lý axonz. Đây có phải anh Minh không?" },
+      { who: "caller", txt: "Vâng, đúng rồi." },
+      { who: "agent", txt: "Khoản thanh toán của anh đã được xác nhận thành công." },
+      { who: "caller", txt: "Cảm ơn bạn nhiều lắm." },
+      { who: "agent", txt: "Không có gì! Chúc anh một ngày tốt lành." },
+    ],
+  },
 };
 
 export function Hero() {
   const { region, openDemo } = useApp();
   const [selectedLang, setSelectedLang] = useState("Hinglish");
   const [transcript, setTranscript] = useState<{ who: string; txt: string }[]>([]);
-  const [metrics, setMetrics] = useState({ lang: "Hinglish", lat: "720ms", sent: "😊 Positive" });
+  const [metrics, setMetrics] = useState({ lang: "Hinglish", lat: "312ms", sent: "😊 Positive" });
   const [typewriterText, setTypewriterText] = useState("");
   const [typewriterPhraseIndex, setTypewriterPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -147,7 +169,7 @@ export function Hero() {
     timeoutIds.current.forEach((id) => clearTimeout(id));
     timeoutIds.current = [];
     setTranscript([]);
-    setMetrics({ lang: "Hinglish", lat: "720ms", sent: "—" });
+    setMetrics({ lang: "Hinglish", lat: "312ms", sent: "—" });
 
     const conv = CONVERSATIONS[selectedLang];
     if (!conv) return;
@@ -309,8 +331,8 @@ export function Hero() {
             }}
           >
             {region === "IN"
-              ? "12+ Indian languages. ₹5.99/min. Zero hold music."
-              : "150 languages globally. $0.10/min. Zero hold music."}
+              ? "12+ Indian languages. 60 globally. ₹5.99/min. Zero hold music."
+              : "12+ Indian languages. 60 globally. $0.10/min. Zero hold music."}
           </p>
 
           <div
@@ -732,7 +754,7 @@ export function Hero() {
                   background: "#22c55e",
                 }}
               />
-              Live · 12+ languages
+              Live · 12+ Indian languages
             </div>
             <div
               className="hero-floating-badge"

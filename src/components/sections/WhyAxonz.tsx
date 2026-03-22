@@ -13,7 +13,7 @@ const CHECKLIST = [
 const STATS = [
   { value: "93%", label: "Call Containment Rate" },
   { value: "300ms", label: "Response Latency" },
-  { value: "150+", label: "Languages Globally", subline: "12+ Indian" },
+  { value: "60+", label: "Languages Globally", subline: "12+ Indian" },
   { value: "14 days", label: "Go-Live Timeline" },
 ];
 

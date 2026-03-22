@@ -70,7 +70,7 @@ export default function WhyAxonzPage() {
           </div>
           <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 16, lineHeight: 1.7 }}>
             We didn&apos;t integrate a third-party IVR. We built our own — from the ground up —
-            optimised specifically for Indian languages, accents, and network conditions. The result is
+            optimised specifically for 12+ Indian languages, accents, and network conditions. The result is
             a 2.5× latency advantage that makes conversations feel human.
           </p>
         </div>
@@ -342,7 +342,7 @@ export default function WhyAxonzPage() {
         >
           {[
             { icon: "⚡", title: "Proprietary IVR", desc: "Built from scratch. Not Twilio. Not Exotel's standard IVR. Our own WebSocket-based real-time voice processing layer." },
-            { icon: "🇮🇳", title: "Indian Language Native", desc: "Not translated. Not adapted. Built for Hinglish, Tamil, Telugu, Kannada from day one. Code-switching handled natively." },
+            { icon: "🇮🇳", title: "Indian Language Native", desc: "Not translated. Not adapted. Built for 12+ Indian languages and 60 languages globally. Code-switching handled natively." },
             { icon: "🛡️", title: "Compliance First", desc: "TRAI DND registry checks on every outbound call. RBI scripting for BFSI. IRDAI guidelines for insurance. Built-in, not bolt-on." },
           ].map((p) => (
             <div

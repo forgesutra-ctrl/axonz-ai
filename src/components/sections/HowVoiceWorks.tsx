@@ -47,7 +47,7 @@ const STEPS = [
     nodeLabel: "VOICE RESPONSE",
     title: "ElevenLabs speaks.\nNaturally.",
     body: "A voice indistinguishable from a human agent — warm, clear, with the right pace for the language. The customer does not know. And that is the point.",
-    stat: "🗣️ 12+ Indian · 150 languages globally",
+    stat: "🗣️ 12+ Indian · 60 languages globally",
     data: [
       { key: "voice_engine", val: "ElevenLabs neural" },
       { key: "language", val: "Hinglish" },

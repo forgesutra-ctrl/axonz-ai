@@ -5,7 +5,6 @@ import Link from "next/link";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { Pricing as PricingSection } from "@/components/sections/Pricing";
 import { useApp } from "@/context/AppContext";
-import { PRICING } from "@/lib/constants";
 
 const FAQ_ITEMS = [
   {
@@ -32,27 +31,6 @@ const FAQ_ITEMS = [
     q: "Do you offer annual contracts?",
     a: "Yes — annual prepay gets you an additional 10% discount. Contact sales.",
   },
-];
-
-const INFRASTRUCTURE = [
-  "Exotel PSTN (India) / Twilio (US)",
-  "WebSocket media streaming",
-  "Call recording & storage",
-  "DND registry checks",
-];
-
-const AI_STACK = [
-  "OpenAI gpt-realtime-mini",
-  "Whisper-1 transcription",
-  "GPT-4o intent resolution",
-  "ElevenLabs voice synthesis",
-];
-
-const PLATFORM = [
-  "Live dashboard & analytics",
-  "CRM webhook integration",
-  "Call transcripts & recordings",
-  "TRAI / RBI compliance tools",
 ];
 
 function FaqAccordion() {
@@ -422,60 +400,6 @@ export default function PricingPage() {
             Calculate your cost
           </h3>
           <PricingCalculator />
-        </div>
-        <div className="pricing-page-included" style={{ padding: "80px 48px", background: "#0A1525" }}>
-          <h3
-            style={{
-              fontFamily: '"DM Serif Display", serif',
-              fontSize: 28,
-              color: "white",
-              textAlign: "center",
-              marginBottom: 48,
-            }}
-          >
-            What&apos;s included
-          </h3>
-          <div
-            className="pricing-page-included-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 32,
-              maxWidth: 900,
-              margin: "0 auto",
-            }}
-          >
-            <div>
-              <h4 style={{ color: "#2DD4BF", fontSize: 14, marginBottom: 16 }}>Infrastructure</h4>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {INFRASTRUCTURE.map((f) => (
-                  <li key={f} style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 8 }}>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 style={{ color: "#2DD4BF", fontSize: 14, marginBottom: 16 }}>AI Stack</h4>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {AI_STACK.map((f) => (
-                  <li key={f} style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 8 }}>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 style={{ color: "#2DD4BF", fontSize: 14, marginBottom: 16 }}>Platform</h4>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {PLATFORM.map((f) => (
-                  <li key={f} style={{ color: "rgba(255,255,255,0.7)", fontSize: 14, marginBottom: 8 }}>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
         <div className="pricing-page-faq" style={{ padding: "80px 48px" }}>
           <h3
